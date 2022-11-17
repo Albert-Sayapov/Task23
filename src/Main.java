@@ -46,8 +46,8 @@ public class Main {
             productCount = Integer.parseInt(parts[1]);
 
             basket.addToCart(productNumber, productCount);
-            basket.saveTxt(file);
         }
+        basket.saveTxt(file);
         basket.printCart();
     }
 }
