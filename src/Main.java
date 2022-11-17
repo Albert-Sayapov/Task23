@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         File file = new File("Basket.txt");
+        File binFile = new File("Basket.bin");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -30,7 +31,7 @@ public class Main {
             int productCount = 0;
 
             if (input.equals("да")) {
-                basket = Basket.loadFromTextFile(file);
+                basket = Basket.loadFromBinFile(binFile);
                 continue;
             } else if (input.equals("нет")) {
                 System.out.println("Введите номер продукта и количество через пробел");
@@ -46,8 +47,9 @@ public class Main {
             productCount = Integer.parseInt(parts[1]);
 
             basket.addToCart(productNumber, productCount);
-            basket.saveTxt(file);
         }
+        basket.saveTxt(file);
+        basket.saveBin(binFile);
         basket.printCart();
     }
 }
