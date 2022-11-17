@@ -50,7 +50,7 @@ public class Basket {
                 writer.write(value + " ");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
